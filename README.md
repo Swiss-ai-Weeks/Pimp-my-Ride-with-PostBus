@@ -15,3 +15,14 @@ By accessing or using the data provided, you agree to the following terms and co
 
 ## Source of Data
 The data of this respository has been provided by [Swiss Post](https://www.post.ch/) submitting the challenge.
+
+## Documentation
+For all the postauto trips a hash of their route is calculated to group the data into folders. In the folder for a trip hash the individual trips are grouped into folders by date. All these trips took the exact same planned timetable route, just at different times.
+
+The individual trip files are CSV files with the following columns:
+- `time`: The timestamp of the GPS point in ISO 8601 format (e.g., `2023-09-01T12:34:56Z`).
+- `latitude`: The latitude of the GPS point in decimal degrees.
+- `longitude`: The longitude of the GPS point in decimal degrees.
+- `velocity`: The velocity of the vehicle at the GPS point in meters per second (m/s).
+
+In one file all the recorded positions of a single trip are stored. The files are named with a trip-id (excluding the file ending .csv) that can be resolved with the [Viadi Routing Services](https://www.viadi-mobility-services.ch/routing-service.html). For the hackathon you can use the INT API of the Viadi Routing Services. The corresponding API key and documentation is provided upon request.
